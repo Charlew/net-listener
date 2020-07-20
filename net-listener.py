@@ -11,7 +11,6 @@ if IP_DEVICE == '' or IP_DEVICE is None:
     exit()
 
 proc = subprocess.Popen(["ping", IP_DEVICE], stdout=subprocess.PIPE)
-iterator = 0
 while True:
     line = proc.stdout.readline()
     if not line:
@@ -20,7 +19,5 @@ while True:
 
     if connected_ip == IP_DEVICE:
         sys.stdout.write(connected_ip + " just connected to the network\n")
-        iterator = iterator + 1
-        if iterator == 5:
-            sys.stdout.write("Exiting...")
-            exit()
+        sys.stdout.write("Exiting...\n")
+        exit()
