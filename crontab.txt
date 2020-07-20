@@ -1,1 +1,1 @@
-0 20 30 * * python net-listener.py
+* * * * 1-5 python net-listener.py
